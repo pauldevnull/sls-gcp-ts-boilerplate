@@ -1,0 +1,29 @@
+{
+  "name": "sls-gcp-ts-boilerplate",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "serverless deploy && gcloud workflows deploy workflow --source=workflow.yml",
+    "deploy-functions": "serverless deploy",
+    "deploy-workflow": "gcloud workflows deploy workflow --source=workflow.yml",
+    "execute": "gcloud workflows execute workflow",
+    "invoke-random": "serverless invoke --function random",
+    "invoke-multiply": "serverless invoke --function multiply"
+  },
+  "author": "pauldevnull",
+  "license": "MIT",
+  "devDependencies": {
+    "@google-cloud/workflows": "^2.3.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "serverless-bundle": "3.2.1",
+    "serverless-google-cloudfunctions": "^4.6.0",
+    "serverless-plugin-scripts": "^1.0.2",
+    "serverless-webpack": "^5.11.0",
+    "typescript": "^5.0.2",
+    "@types/node": "^18.15.10"
+  },
+  "dependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}

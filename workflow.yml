@@ -1,0 +1,23 @@
+main:
+  steps:
+  - randomFunction:
+      call: http.get
+      args:
+        url: https://us-central1-sls-gcp-ts-boilerplate.cloudfunctions.net/sls-gcp-ts-boilerplate-dev-random
+        auth:
+          type: OIDC
+      result: randomResult
+  - multiplyFunction:
+      call: http.post
+      args:
+        url: https://us-central1-sls-gcp-ts-boilerplate.cloudfunctions.net/sls-gcp-ts-boilerplate-dev-multiply
+        body:
+          input: ${randomResult}
+        auth:
+          type: OIDC
+      result: multiplyResult
+  - returnResult:
+      return: ${multiplyResult}
+#  - return_multiple_values:
+#      return:
+#        multiplyResult: ${multiplyResult}
