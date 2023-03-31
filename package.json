@@ -1,7 +1,7 @@
 {
   "name": "sls-gcp-ts-boilerplate",
   "version": "0.1.0",
-  "description": "",
+  "description": "Boilerplate for a Typescript project using the Serverless framework on Google Cloud with multiple cloud function support via Webpack",
   "main": "src/index.ts",
   "scripts": {
     "deploy": "serverless deploy && gcloud workflows deploy workflow --source=workflow.yml",
